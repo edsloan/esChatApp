@@ -1,0 +1,36 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>POWA-FE-Chat</title>
+	<link rel="icon" type="image/x-icon" href="http://www.favicon.co.uk/favicon.gif?id=77ktht4ditodbhbkacpqhur3s2" />
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-5 col-md-5">{{> loginButtons align="right"}}</div>
+		<div class="col-xs-4 col-md-6 logo"></div>
+	 </div>
+ 	<div>
+ 	{{> input }}
+ 	{{> messages }}
+ 	</div>
+
+</div>
+</body>
+
+<template name="messages">
+<div class="messages">
+	<div class="col-md-12">
+	  {{#each messages}}
+	  <p class="row"><strong>{{name}}:</strong> {{message}}<br><hr></p>
+	  {{/each}}
+	</div>
+</div>
+</template>
+
+<template name="input">
+  <div class="col-md-offset-1">
+  	<input maxlength="200" type="text" placeholder="Hit enter to submit" id="message" class="col-md-10">
+  </div>
+</template>
+
